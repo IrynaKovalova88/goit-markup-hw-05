@@ -298,6 +298,7 @@ address {
   color: var(--secondary-color);
   background-color: rgba(47, 48, 58, 0.8);
   padding: 27px 0;
+  margin: 0;
 }
 
 /*========= END GALLERY ========*/
