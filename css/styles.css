@@ -579,6 +579,12 @@ address {
 }
 /*========= END FOOTER ========*/
 
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -587,10 +593,7 @@ address {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: opacity 250ms var(--timing-function);
-}
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.7);
+  transition: opacity 250ms var(--timing-function), visibility 250ms var(--timing-function);
 }
 .modal {
   position: absolute;
@@ -605,6 +608,10 @@ address {
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms var(--timing-function);
 }
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
 .close-button {
   position: absolute;
   top: 14px;
@@ -616,9 +623,4 @@ address {
   background-color: transparent;
   cursor: pointer;
   padding: 0;
-}
-.backdrop.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
 }
